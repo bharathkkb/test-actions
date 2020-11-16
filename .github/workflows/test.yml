@@ -9,9 +9,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: google-github-actions/setup-gcloud@master # Set up ADC for credentials
+      with:
+        service_account_key: ${{ secrets.SA_KEY_JSON }}
+        export_default_credentials: true
   gcloud-old:
     name: gcloud-old
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        service_account_key: ${{ secrets.SA_KEY_JSON }}
+        export_default_credentials: true
