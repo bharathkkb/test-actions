@@ -11,6 +11,8 @@ jobs:
     - uses: google-github-actions/setup-gcloud@v0.2.0 # Set up ADC for credentials
       with:
         service_account_key: ${{ secrets.SA_KEY_JSON }}
+        project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
+        service_account_email: ${{ secrets.GCLOUD_SA_EMAIL }}
         export_default_credentials: true
   gcloud-old:
     name: gcloud-old
